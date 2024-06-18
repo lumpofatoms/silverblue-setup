@@ -58,6 +58,12 @@ _(Might not be needed anymore after update to NVIDIA driver v555)_
 **ffmpeg codecs:**    
 `rpm-ostree override remove libavcodec-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free ffmpeg-free libavdevice-free --install ffmpeg`  
 
+**flathub:**
+Re-install flathub-flatpaks for apps that were installed from fedora repo
+`flatpak install --reinstall flathub $(flatpak list --app-runtime=org.fedoraproject.Platform --columns=application | tail -n +1 )`
+Remove fedora repo
+`flatpak remote-delete fedora`
+
 **Firefox:**  
 [Arkenfox](https://github.com/arkenfox/user.js/wiki/4.1-Extensions)  
 [Mullvad DNS resolver](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls)
